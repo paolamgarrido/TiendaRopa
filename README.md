@@ -1,7 +1,7 @@
 # Descripción del programa
 Este programa consiste en una tienda física de básicos de ropa y tiene como objetivo realizar a través de una selección de productos por el cliente una compra, la cuál podrá ser completada pagando con tarjeta o efectivo. Para solucionar dicho problema se buscó dividir el programa de c++ en las siguientes cinco clases:
 - Cliente: almacena los datos del cliente 
-- Producto: representa la selección de productos disponibles 
+- Productos: representa la selección de productos disponibles 
 - Compra: registra el precio de la selección de productos y el método de pago 
 - Compra con tarjeta: implementa el método de pago 
 - Compra con efectivo: implementa el método de pago 
