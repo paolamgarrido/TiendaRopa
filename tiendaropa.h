@@ -32,7 +32,7 @@ public:             // Metodos
     void setNombre(string);
     string getNombre();
     void imprimirDatosTicket();
-    void mostrarDatosPago();    // Sobre escritura
+    void mostrarDatosPago();    // Sobreescritura
 };
 
 Compra::Compra(int _id, int _monto, string _metodoPago, string _nombre) {
@@ -95,7 +95,7 @@ class Compra_Efectivo : public Compra{
         int getConPago();
         void setCambio(int);
         int getCambio();
-        void mostrarDatosPago();        // Sobre escritura
+        void mostrarDatosPago();        // Sobreescritura
 };
 
 Compra_Efectivo::Compra_Efectivo(int _id, int _monto, string _metodoPago, string _nombre, int _conPago, int _cambio): Compra(_id, _monto,_metodoPago,_nombre){
@@ -144,7 +144,7 @@ class Compra_Tarjeta : public Compra{
             plazosPago = 0;
         }
         Compra_Tarjeta(int, int, string, string, string, string, string,string, string);
-        Compra_Tarjeta(int, int, string, string, string, string, string,string, string,int);    // Sobre carga
+        Compra_Tarjeta(int, int, string, string, string, string, string,string, string,int);    // Sobrecarga
         void setTitular(string);
         string getTitular();
         void setCp(string);
@@ -157,7 +157,7 @@ class Compra_Tarjeta : public Compra{
         string getCvc();
         void setPlazosPago(int);
         int getPlazosPago();
-        void mostrarDatosPago();        // Sobre escritura
+        void mostrarDatosPago();        // Sobreescritura
 };
 
 Compra_Tarjeta::Compra_Tarjeta(int _id, int _monto, string _metodoPago, string _nombre, string _titular, string _cp, string _numero, string _vencimiento, string _cvc): Compra(_id, _monto,_metodoPago,_nombre){
