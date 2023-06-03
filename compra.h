@@ -1,8 +1,5 @@
-/*En este avance se implementa el uso de:
-Herencia, Sobre escritura y Sobre carga.*/
-
-#ifndef TIENDAROPA_H
-#define TIENDAROPA_H
+#ifndef COMPRA_H
+#define COMPRA_H
 
 #include <iostream>
 
@@ -16,6 +13,7 @@ private:                // Atributos
     string nombre;
 
 public:             // Metodos
+    virtual ~Compra() {}
     Compra(){                   //Constructor
         id = 0;
         monto = 0;
@@ -32,7 +30,7 @@ public:             // Metodos
     void setNombre(string);
     string getNombre();
     void imprimirDatosTicket();
-    void mostrarDatosPago();    // Sobreescritura
+    virtual void mostrarDatosPago() = 0;    // Sobreescritura y clase abstracta. 
 };
 
 Compra::Compra(int _id, int _monto, string _metodoPago, string _nombre) {
@@ -75,10 +73,12 @@ string Compra::getNombre() {
 }
 
 void Compra::imprimirDatosTicket() {
-    cout << "\nID Compra: " << id << endl;
+    cout << "---------------------------" << endl;
+    cout << "ID Compra: " << id << endl;
     cout << "Nombre Cliente: " << nombre << endl;
     cout << "Método de Pago: " << metodoPago << endl;
     cout << "Monto: " << monto << endl;
+    cout << "---------------------------" << endl;
 }
 
 class Compra_Efectivo : public Compra{
@@ -123,6 +123,7 @@ void Compra_Efectivo::mostrarDatosPago(){
     imprimirDatosTicket();
     cout << "Cantidad con la que se pagó: " << conPago << endl;
     cout << "Cambio: " << cambio << endl;
+    cout << "---------------------------" << endl;
 }
 
 
@@ -231,8 +232,8 @@ void Compra_Tarjeta::mostrarDatosPago(){
     cout << "Codigo postal: " <<cp<< endl;
     cout << "Número tarjeta: " <<numero<< endl;
     cout << "Vencimiento tarjeta: " <<vencimiento<< endl;
-    cout << "CVC: " <<cvc<< endl;
     cout <<"Plazos de pago: " << plazosPago << endl;
+    cout << "---------------------------" << endl;
 }
 
 #endif 
