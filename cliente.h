@@ -9,11 +9,11 @@
 using namespace std;
 
 class Cliente {
-private:                
-    string nombre;     
+private:
+    string nombre;
     vector<Compra *> compras;
 
-public:             
+public:
     Cliente();
     Cliente(string);
 
@@ -21,11 +21,11 @@ public:
 
     string getNombre();
 
-    void agregarCompraEfectivo(int, int, string, int, int);
-    void agregarCompraTarjeta(int, int, string, int);
+    void agregarCompraEfectivo(int, float, string, float, float);
+    void agregarCompraTarjeta(int, float, string, float);
 
-    Compra* buscarCompra(int);
-    
+    Compra *buscarCompra(int);
+
     void mostrarCompras();
 };
 
@@ -40,33 +40,31 @@ void Cliente::setNombre(string nombre) { this->nombre = nombre; }
 
 string Cliente::getNombre() { return nombre; }
 
-void Cliente::agregarCompraEfectivo(int id, int monto, string metodoPago, int conPago, int cambio){
+void Cliente::agregarCompraEfectivo(int id, float monto, string metodoPago, float conPago, float cambio) {
     Compra *c = new Compra_Efectivo(id, monto, metodoPago, conPago, cambio);
     compras.push_back(c);
 }
 
-void Cliente::agregarCompraTarjeta(int id, int monto, string metodoPago, int iva){
+void Cliente::agregarCompraTarjeta(int id, float monto, string metodoPago, float iva) {
     Compra *c = new Compra_Tarjeta(id, monto, metodoPago, iva);
     compras.push_back(c);
 }
 
-Compra* Cliente::buscarCompra(int id){
-    for(Compra *compra : compras){
-        if(compra->getIdCompra() == id){
+Compra *Cliente::buscarCompra(int id) {
+    for (Compra *compra : compras) {
+        if (compra->getIdCompra() == id) {
             return compra;
         }
     }
     return nullptr;
 }
 
-void Cliente::mostrarCompras(){
-    for(Compra *compra : compras){
+void Cliente::mostrarCompras() {
+    for (Compra *compra : compras) {
         cout << "\n";
         compra->mostrarDatosPago();
         cout << "\n";
     }
 }
 
-#endif
-
-//
+#endif  
