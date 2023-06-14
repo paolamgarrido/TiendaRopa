@@ -17,7 +17,7 @@ Como se menciono anteriormente, la aplicación permite a los usuarios registrar 
 - Para pagos con tarjeta, se realiza el mismo proceso antes mencionado para los productos. Sin embargo, en este caso se le indica al cliente la cantidad a pagar y se hace "el uso" de la terminal para la autorización del pago. Después se agrega al ticket información adicional como el número de cuenta, el número de autorización y se calcula el monto total de la compra con el 16% de IVA incluido mostrando incluso la cantidad de este. Luego se entrega al ticket de compra
 3. Al seleccionar la opción de ver historial de compras, se muestra el historial de todas las compras realizadas por numero de cliente y su ticket de compra correspondiente. 
 4. Al seleccionar la opción de cerrar sesión, se finaliza la ejecución del programa.
-5. A lo largo del programa si el usuario no ingresa un número valido para las opciones disponibles este le solicitara al usuario que ingrese una opción valida. 
+Nota: A lo largo del programa si el usuario no ingresa un número valido para las opciones disponibles este le solicitara al usuario que ingrese una opción valida, su entrada debe ser un número entero (tipo int). 
 
 # UML & Main
 
