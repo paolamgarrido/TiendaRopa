@@ -13,8 +13,12 @@ int main() {
 
     vector<Cliente> clientes;
     bool menuPrincipal = true;
-
     int numCliente = 0;
+    bool comprasRealizadas = false;
+
+    string nombre;
+    cout << "Nombre del empleado: ";
+    cin >> nombre; 
   
     while(menuPrincipal){
         int opcion;
@@ -22,6 +26,7 @@ int main() {
         cin >> opcion;
 
         if(opcion == 1){
+            comprasRealizadas = true;
             bool regresarMenu = true;
             while (regresarMenu) {
                 string nombre = "Cliente " + to_string(numCliente+1);
@@ -137,8 +142,10 @@ int main() {
 
                     int idCompra = 28150 + numCliente;
                     string metodoPago = "Tarjeta";
+                    int cuenta = 6460 + numCliente;
+                    int autorizacion = 52420 + numCliente;
 
-                    clientes[numCliente].agregarCompraTarjeta(idCompra, 0, metodoPago, 0); 
+                    clientes[numCliente].agregarCompraTarjeta(idCompra, 0, metodoPago, 0, cuenta, autorizacion); 
 
                     for (int j = 0; j < cantidadProductos; j++) {
                         
@@ -219,6 +226,8 @@ int main() {
                     dynamic_cast<Compra_Tarjeta*>(clientes[numCliente].buscarCompra(idCompra))->setIva(iva);
                     dynamic_cast<Compra_Tarjeta*>(clientes[numCliente].buscarCompra(idCompra))->setMonto(montoTotal);
 
+                    cout << "\nEl total de su compra fue de: $" << montoTotal << endl;
+
                     cout << "\n               Ingresar tarjeta               " << endl;
                     cout << "\n----------------------------------------------" << endl;
                     cout << "                 Pago exitoso                 " << endl;
@@ -231,14 +240,22 @@ int main() {
             }
 
         } else if (opcion == 2) {
-            for (int k = 0; k < numCliente ; k++) {
+            cout << "\nEmpleado: " << nombre << endl;
+
+            if(comprasRealizadas == false){
+                cout << "\nNo se han registrado compras aún." << endl;
+
+            }else{
+                for (int k = 0; k < numCliente ; k++) {
                 string nombre = clientes[k].getNombre();
                 cout << "\n";
                 cout << nombre << endl;
                 clientes[k].mostrarCompras();
             }
+
+            }
         } else if (opcion == 3) {
-            cout << "\nLa sesion se ha finalizado correctamente." << endl;
+            cout << "\n" << nombre << " tu sesion ha finalizado correctamente." << endl;
             menuPrincipal = false;
         } else {
             cout << "\nIngresa una opcion valida." << endl;
