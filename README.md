@@ -2,7 +2,7 @@
 El proyecto es una aplicación para una tienda de ropa llamada "Esencia Boutique". El objetivo de su uso es permitir a los empleados que se encuentran en el área de caja en la tienda física registrar las compras realizadas, seleccionando el método de pago (efectivo o tarjeta), así como los productos. Mientras tanto, la aplicación se encargará de generar un ticket para el cliente, guardando una copia de este en el historial de compras, que podra ser revisado por los empleados para uso personal de la tienda en el control de ventas. 
 
 Para solucionar dicho problema se buscó dividir el programa de c++ en las siguientes cinco clases:
-- Cliente: almacena el numero de cliente que realizo la compra 
+- Cliente: almacena el nombre del cliente que realizo la compra (en el formato cliente #)
 - Productos: representa la selección del producto o productos comprados por el cliente 
 - Compra: registra el id de la compra, el precio de la selección de productos, el método de pago elegido por el cliente y los prodcutos que este selecciono
 - Compra con tarjeta: implementa el método de pago (basandose en el uso de terminal)
