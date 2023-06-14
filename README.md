@@ -28,15 +28,15 @@ Para dejar más clara la conexión entre el main y el UML, se mencionan las sigu
 - Después se definen los datos faltantes a partir del precio de los productos con el uso de los métodos y apuntadores, para de esta manera imprimir el ticket con el método de sobrescritura en las clases hijas de la función mostrarDatosPago() que está guardado dentro del método mostrarCompras() en la clase Cliente que se manda a llamar a través del cliente creado. 
 
 # Consideraciones
-A continuación se identifican algunas limitaciones del programa y casos que harían que el programa dejará de funcionar correctamente: 
-- La compra debe ser finalizada para salir y pasar al siguiente cliente, es decir solo se puede trabajar con uno a la vez. Una vez que la compra registrada finalice con la entrega del ticket, no será posible regresar a este cliente para realizar modificaciones o agregar otra compra. 
+A continuación se identifican algunas limitaciones del programa, consideraciones y casos que harían que el programa dejará de funcionar correctamente: 
+- La compra debe ser finalizada para salir y pasar al siguiente cliente, es decir solo se puede trabajar con uno a la vez. Una vez que la compra registrada finalice con la entrega del ticket, no será posible regresar a este cliente para realizar modificaciones o agregar otra compra. Por lo tanto, el set del nombre no es requerido, ya que este no se planea modificar una vez que la compra sea realizada. 
 - Se asume que la forma de pago será exitosa, no se toma en consideración si el cliente no tiene suficiente efectivo o la tarjeta es rechazada. En el caso de la tarjeta se simula el uso de una terminal, por lo que los datos bancarios no se solicitan al cliente. 
-- No es posible modificar los productos esto incluye sus colores, tallas o precios. 
+- No es posible modificar los productos esto incluye su descripción, colores, tallas o precio establecido. Por lo tanto, sus atributos no cuentan con getters y setters.
 - Al imprimir el ticket no se muestra una cantidad y precio individual para productos repetidos, es decir, si llevas dos blusas iguales se imprimirá el producto uno debajo del otro, no como blusa (descripción del producto) 2 (precio individual) precio x2). 
 - No existe un inventario de productos, así que estos no cuentan con un código individual para ser buscados o seleccionados, por lo que sus parámetros deben ser definidos de forma individual en el main. 
 - Una vez realizada la selección el producto no podrá ser eliminado.  
 - Las compras no pueden ser eliminadas. 
-- No existe la clase empleado, por lo tanto, solo se solicita el nombre del empleado para informarle al final del programa con el uso de su nombre que la sesión ha finalizado correctamente. Sus datos no serán guardados y no se verán las ventas realizadas por cada empleado.
+- No existe la clase empleado, por lo que sólo se solicita el nombre del empleado para informarle sus ventas al ver el historial de compras y al final del programa para informarle que su sesión ha finalizado correctamente. Sus datos no serán guardados y no se verán las ventas realizadas por cada empleado debido a que este programa esta diseñado para uno solo, sin embargo, esto podría ser implementado en un futuro si se busca expandir la capacidad del programa para llevar un conteo de las ventas realizadas por cada empleado así como su desempeño.
 - Ingresar un carácter, palabra o símbolo en las opciones del menú o listado de productos, provocaría un comportamiento inusual en el programa.
 - Ingresar en la compra efectivo una cantidad con la que se pagará menor al monto, provocaría un error en el programa. 
 
