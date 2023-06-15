@@ -4,7 +4,6 @@
  * Paola María Garrido Montes
  * A01704017
  * 16/06/2023
- * version: 3
  * Esta clase permite establecer y obtener el nombre
  * del cliente así como agregar las compras realizadas
  * según su método de pago (tarjeta o efectivo). También
@@ -26,12 +25,12 @@ using namespace std;
 
 class Cliente {
 
-// Declaro las variables privadas de instancia  
+// Declaro las variables privadas de instancia. 
 private:
     string nombre;
     vector<Compra *> compras; // Almacena punteros a objetos de Compra.
 
-// Declaro constructor por defecto, con parámetros y los métodos públicos
+// Declaro constructor por defecto, con parámetros y los métodos públicos.
 public:
     Cliente();
     Cliente(string);
@@ -42,17 +41,17 @@ public:
     void mostrarCompras();
 };
 
-// Definición del constructor por defecto
+// Definición del constructor por defecto.
 Cliente::Cliente() {
     nombre = "";
 }
 
-// Definición del constructor con parámetros
+// Definición del constructor con parámetros.
 Cliente::Cliente(string nombre) {
     this->nombre = nombre;
 }
 
-// Devuelve el valor del atributo nombre 
+// Devuelve el valor del atributo nombre. 
 string Cliente::getNombre() { return nombre; }
 
 /**
@@ -65,8 +64,8 @@ string Cliente::getNombre() { return nombre; }
  * 
  * Se implica el uso de herencia, polimorfismo y composición. 
  *
- * @param  int Id de la compra, float monto, string metodo de pago, 
- *         float cantidad con la que se pago y float cambio.
+ * @param  int Id de la compra, float monto, string metódo de pago, 
+ *         float cantidad con la que se pagó y float cambio.
  * @return 
  */
 void Cliente::agregarCompraEfectivo(int id, float monto, string metodoPago, float conPago, float cambio) {
@@ -84,7 +83,7 @@ void Cliente::agregarCompraEfectivo(int id, float monto, string metodoPago, floa
  * 
  * Se implica el uso de herencia, polimorfismo y composición. 
  *
- * @param  int Id de la compra, float monto, string metodo de pago, 
+ * @param  int Id de la compra, float monto, string metódo de pago, 
  *         float iva, int últimos números del número de cuenta y int
  *         número de autorización dela compra. 
  * @return 
@@ -98,9 +97,9 @@ void Cliente::agregarCompraTarjeta(int id, float monto, string metodoPago, float
  * buscarCompra busca las compras según su ID. 
  *
  * Busca una compra en el vector compras según el ID proporcionado. 
- * Para esto recorre el vector y compara el ID de cada compra con el ID buscado. 
- * Si encuentra una coincidencia devuelve un puntero a esa compra, de lo contrario
- * devuelve un puntero nulo.
+ * Para esto recorre el vector de compras y compara el ID de cada 
+ * compra con el ID buscado. Si encuentra una coincidencia devuelve 
+ * un puntero a esa compra, de lo contrario devuelve un puntero nulo.
  *
  * @param  int Id de la compra.
  * @return puntero de compra o puntero nulo, según sea el caso. 
@@ -118,14 +117,14 @@ Compra *Cliente::buscarCompra(int id) {
  * mostrarCompras imprime el ticket de compra. 
  *
  * Muestra los detalles de todas las compras almacenadas en el 
- * vector compras. Para esto itera sobre el vector y para cada compra, 
- * llama al método mostrarDatosPago de la compra correspondiente con
- * el uso de apuntadores para mostrar los datos de pago, es decir, 
- * el ticket de compra. Además imprime una línea en blanco antes
- * y después para una mejor visualización al momento de impresión. 
+ * vector compras. Para esto itera sobre el vector compras y para cada 
+ * compra, llama al método mostrarDatosPago de la compra correspondiente 
+ * con el uso de apuntadores para mostrar los datos de pago, es decir, 
+ * el ticket o tickets de compra. Además imprime una línea en blanco 
+ * antes y después para una mejor visualización al momento de impresión. 
  *
  * @param   
- * @return ticket o tickets de compra.
+ * @return 
  */
 void Cliente::mostrarCompras() {
     for (Compra *compra : compras) {
