@@ -48,16 +48,14 @@ A continuación se identifican algunas limitaciones del programa, consideracione
 # Adicionales 
 Además de los temas y bibliotecas vistas en clase que se encuentran dentro del programa, se implementaron otras bibliotecas, el uso de vectores y dynamic cast. 
 
-Bibliotecas
--#include <vector>
-  - permite el uso de vectores gracias a que cuenta con el contenedor y las definiciones de sus funciones 
--#include <iomanip>
-  - permite la precision decimal al momento de mostrar los precios y el monto en el programa 
-Vectores
+Bibliotecas:
+- #include <vector>: permite el uso de vectores gracias a que cuenta con el contenedor y las definiciones de sus funciones 
+- #include <iomanip>: permite la precision decimal al momento de mostrar los precios y el monto en el programa 
+Vectores:
 - Los vectores son arreglos dinamicos dentro de un contenedor, que cuentan con la habilidad de modificar de forma automatica su tamaño dependiendo de si un objeto es agregado o eliminado, es decir no cuentan con un tamaño fijo. Los datos de los vectores son ingresados hasta el final y cuentan con varias funciones que se pueden utilizar. Por ejemplo, el programa cuenta con la funcion .push_back() para agregar objetos y datos al final de los vectores creados. 
-Dynamic Cast 
+Dynamic Cast: 
 - Recordemos que cast es un operador que nos permite convertir de un tipo de dato a otro, por lo que un dynamic cast nos permite realizar este cast durante el tiempo de ejecución de forma segura, ya que para ser aplicado cuenta con ciertas condiciones. Para utilizarlo debemos contar con una función virtual en la clase base y el uso de polimorfismo. Por lo tanto, en el proyecto este es implementado en dos casos, para convertir un puntero de tipo base (Compra*) a un puntero de tipo derivado (Compra_Efectivo*) y de la misma forma con (Compra_Tarjeta*), con el fin de permitir el acceso a las funciones y miembros específicos de la clase Compra_Efectivo y Compra_Tarjeta que no están presentes en la clase base Compra.
 
 Fuentes: 
-“Vector in C++ STL.” GeeksforGeeks, 20 Mar. 2023, www.geeksforgeeks.org/vector-in-cpp-stl/. 
-"Dynamic_cast in C++." GeeksforGeeks, 20 May 2021, www.geeksforgeeks.org/dynamic-_cast-in-cpp/.
+- “Vector in C++ STL.” GeeksforGeeks, 20 Mar. 2023, www.geeksforgeeks.org/vector-in-cpp-stl/. 
+- "Dynamic_cast in C++." GeeksforGeeks, 20 May 2021, www.geeksforgeeks.org/dynamic-_cast-in-cpp/.
